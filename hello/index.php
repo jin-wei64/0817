@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($_POST["btnOK"] )){
+        $_SESSION["who"] = $_POST["username"];
+        header("Location: hello.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +13,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method = "post" action = "hello.php">
+    <form method = "post" action = "">
         your name:
         <input type = "text" name = "username" >
         <input type = "submit" name = "btnOK" value = "OK" >

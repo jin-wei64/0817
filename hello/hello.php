@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-   Hello <?php echo $_POST["username"] ?>
+   Hello <?php echo $_SESSION["who"] ?>
 </body>
 </html>
