@@ -21,6 +21,6 @@ function ShowStar($iCount, $sWhat = "*")
 	}
 }
 
-$iHowMany = 21;
-ShowStar($iHowMany);
+$iHowMany = 19;
+showstar($iHowMany);
 ?>

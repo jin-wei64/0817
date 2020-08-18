@@ -5,6 +5,6 @@
 	
 	echo "<br />";
 	
-	natsort($testArray);
+	natsort($testArray); //會把0~9判斷為數字 ex~ 18>2
 	var_dump($testArray);
 ?>

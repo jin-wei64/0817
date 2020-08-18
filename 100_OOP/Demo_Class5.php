@@ -5,8 +5,12 @@ echo "<br>";
 
 $obj->weight = 10;
 $obj->weight = -5;
+$obj->setweight(20);
 echo $obj->weight;
-
+// foreach ( get_class_methods ( "CAnimal" ) as $varName => $varValue ) {
+// 	echo "$varValue <br>";
+// }
+//methods must be private ; maybe
 
 class CAnimal {
 	public $weight;
@@ -15,7 +19,7 @@ class CAnimal {
 	function __construct() {
 		foreach ( get_class_vars ( "CAnimal" ) as $varName => $varValue ) {
 			if (substr ( $varName, 0, 1 ) != "_")
-				unset ( $this->$varName );
+				unset ( $this->$varName ); //claer weight.value
 		}
 		
 		$this->weight = 0;

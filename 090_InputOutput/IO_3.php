@@ -1,6 +1,6 @@
 <?php
 if (isset ( $_POST ["btnOK"] )) {
-	processFile ( $_FILES ["file1"] );
+	processFile ( $_FILES ["file1"] ); //為一個array
 }
 function processFile($objFile) {
 	if ($objFile ["error"] != 0) {
@@ -9,7 +9,7 @@ function processFile($objFile) {
 		return;
 	}
 	
-	$test = move_uploaded_file ( $objFile ["tmp_name"], "./" . $objFile ["name"] );
+	$test = move_uploaded_file ( $objFile ["tmp_name"], "./" . $objFile ["name"] ); //先move 再更新
 	if (! $test) {
 		die ( "move_uploaded_file() faile" );
 	}
@@ -33,8 +33,9 @@ function processFile($objFile) {
 </head>
 <body>
 	<form method="post" enctype="multipart/form-data" action="">
-		1. Select a file：<input type="file" name="file1" /><br /> <input
-			type="submit" name="btnOK" value="2. 送出資料" />
+		1. Select a file：
+		<input type="file" name="file1" /><br /> 
+		<input type="submit" name="btnOK" value="2. 送出資料" />
 	</form>
 </body>
 </html>
